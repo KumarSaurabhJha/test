@@ -21,7 +21,7 @@ class MainApplication : Application() {
             modules(
                 listOf(
                     restRepositoryModule,
-                    restServiceModule,
+                    restApiModule,
                     retrofitModule,
                     domainModule,
                     viewModelModule

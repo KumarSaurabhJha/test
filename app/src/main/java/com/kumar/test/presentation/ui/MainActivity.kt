@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         R.string.dialog_error_positive_button,
         R.string.dialog_error_negative_button,
         {
-            //Todo: load data again
+            pictureViewModel.onRetryClick()
         },
         { finish() })
 
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
+        pictureViewModel.init()
         setContentView(view)
         initViews()
         setObservers()
@@ -41,8 +42,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun setObservers() {
 
+        pictureViewModel.photoDisplayList.observe(this) {
+            it.getContentIfNotHandled()?.let { pictureList ->
+            }
+        }
+
         pictureViewModel.onError.observe(this) {
-            //Todo: show error dialog
+            it.getContentIfNotHandled()?.let { onError ->
+                if (onError) {
+
+                }
+            }
+        }
+
+        pictureViewModel.noElement.observe(this) {
+            it.getContentIfNotHandled()?.let { noElement ->
+                if (noElement) {
+
+                }
+            }
         }
     }
 
