@@ -4,6 +4,6 @@ interface Repository<T> {
 
    suspend fun getAll(): List<T>
 
-   suspend fun get(id: String): T?
+   suspend fun get(id: Int): T?
 
 }
