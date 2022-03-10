@@ -12,8 +12,7 @@ interface RestApi {
     @GET("/photos")
     suspend fun getPictures(): Response<PhotoData>
 
-    @GET
-
+    @GET("/photos/{id}")
     suspend fun getPicture(
         @Path("id") id: Int
     ): Response<Photo>

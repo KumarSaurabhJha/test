@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onThumbnailClick(id: Int) {
-
+        PictureDetailActivity.launchActivity(this, id)
     }
 
     private val onErrorDialog = DoubleActionAlertDialog(
