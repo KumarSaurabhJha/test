@@ -46,6 +46,7 @@ private fun List<Photo>.toDomainList(): List<PhotoDomainModel> {
 
 private fun Photo.toDomainModel(): PhotoDomainModel =
     PhotoDomainModel(
+        id = this.id,
         thumbnailUrl = this.thumbnailUrl,
         title = this.title,
         url = this.url

@@ -4,5 +4,6 @@
     <string name="dialog_error_message">An unexpected error happened. Please try again.</string>
     <string name="dialog_error_positive_button">Try Again</string>
     <string name="dialog_error_negative_button">Exit</string>
+    <string name="main_screen_no_picture_found">No pictures could be found at this time, try again at later time</string>
 
 </resources>

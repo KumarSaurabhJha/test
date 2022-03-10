@@ -5,14 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kumar.test.domain.model.PhotoDomainModel
-import com.kumar.test.domain.usecase.GetPictureUseCase
 import com.kumar.test.domain.usecase.GetPicturesListUseCase
 import com.kumar.test.presentation.util.Event
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
 class PictureViewModel(
-    private val getPictureUseCase: GetPictureUseCase,
     private val getPicturesListUseCase: GetPicturesListUseCase
 ) : ViewModel() {
 
@@ -26,19 +24,17 @@ class PictureViewModel(
     private val _noElement = MutableLiveData<Event<Boolean>>()
     val noElement: LiveData<Event<Boolean>> get() = _noElement
 
-    private val errorHandler = CoroutineExceptionHandler { _, throwable ->
+    private val errorHandler = CoroutineExceptionHandler { _, _ ->
         _onError.postValue(Event(true))
     }
 
-    fun init(){
+    fun init() {
         fetchPictureList()
     }
 
     fun onRetryClick() {
         fetchPictureList()
     }
-
-
 
     private fun fetchPictureList() {
         viewModelScope.launch(errorHandler) {
