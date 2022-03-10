@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="dialog_error_title">Could not load data</string>
+    <string name="dialog_error_message">An unexpected error happened. Please try again.</string>
+    <string name="dialog_error_positive_button">Try Again</string>
+    <string name="dialog_error_negative_button">Exit</string>
+
+</resources>
